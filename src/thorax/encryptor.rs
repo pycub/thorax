@@ -36,7 +36,7 @@ mod tests {
         let encryptor: Encryptor = Encryptor::new(env::var("PUBLICKEY_PATH").unwrap());
         let decryptor: Decryptor = Decryptor::new(env::var("PRIVATEKEY_PATH").unwrap());
 
-        let text = "fuck";
+        let text = "thorax is where you keep your secret secrets!";
 
         let encrypted_text = encryptor.encrypt(text);
         let decrypted_text = decryptor.decrypt(encrypted_text.as_slice());
