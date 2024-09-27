@@ -4,10 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-serde = { version = "1.0.210", features = ["derive"] }
-serde_json = "1.0.128"
-axum = {version = "0.7.6"}
-tokio = { version = "1.40.0", features = ["full"] }
-rand = "0.8"
-rsa = "0.9"
+base85 = "2.0.0"
+rand = "0.8.5"
+rsa = "0.9.6"
 dotenv = "0.15.0"

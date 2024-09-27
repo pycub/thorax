@@ -1,15 +1,16 @@
-use rsa::pkcs1::DecodeRsaPrivateKey;
+use rsa::pkcs8::DecodePrivateKey;
 use rsa::{Pkcs1v15Encrypt, RsaPrivateKey};
+use std::path::Path;
 
 pub struct Decryptor {
     private_key: RsaPrivateKey,
 }
 
 impl Decryptor {
-    pub fn new(private_key: &str) -> Self {
+    pub fn new(path: impl AsRef<Path>) -> Self {
         Decryptor {
-            private_key: RsaPrivateKey::from_pkcs1_pem(private_key)
-                .expect("Failed to parse private key"),
+            private_key: RsaPrivateKey::read_pkcs8_pem_file(path)
+                .expect("failed to parse private key"),
         }
     }
 
