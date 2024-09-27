@@ -26,8 +26,8 @@ impl Encryptor {
 mod tests {
     use super::*;
     use crate::thorax::decryptor::Decryptor;
-    use std::env;
     use dotenv::dotenv;
+    use std::env;
 
     #[test]
     fn test_encryption() {
